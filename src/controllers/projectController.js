@@ -13,3 +13,12 @@ exports.create = async(req, res) => {
   if (project.errors.length > 0) return res.status(400).json(project.errors);
   res.json(createdProject);
 };
+
+exports.show = async(req, res) => {
+  if (!req.params.id) return res.status(400).json('Error');
+  const project = new Project();
+  const showProject = await project.show(req.params.id);
+
+  if (project.errors.length > 0) return res.status(400).json(project.errors);
+  res.json(showProject);
+};
