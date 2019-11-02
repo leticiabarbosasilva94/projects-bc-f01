@@ -17,6 +17,11 @@ class Project {
 
   show = async(id) => {
     if (!Number(id)) return this.errors.push('ID must be a number');
+    await this.index();
+    id = Number(id);
+
+    if (id > this.projects.length) return this.errors.push('Project do not exists.');
+    return this.projects[id];
   }
 
   create = async() => {
