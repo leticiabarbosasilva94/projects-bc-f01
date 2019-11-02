@@ -1,28 +1,22 @@
 [
   {
     "id": 0,
-    "name": "O peito do pé de pedro",
+    "name": "Teste de Projeto",
     "tags": [
       "ReactJs"
     ]
   },
   {
     "id": 1,
-    "name": "O peito do pé de pedro",
+    "name": "Teste de edição 3",
     "tags": [
-      "ReactJs"
+      "Tag1",
+      "tag2"
     ]
   },
   {
     "id": 2,
-    "name": "O peito do pé de pedro",
-    "tags": [
-      "ReactJs"
-    ]
-  },
-  {
-    "id": 3,
-    "name": "O peito do pé de pedro",
+    "name": "Teste de Projeto",
     "tags": [
       "ReactJs"
     ]

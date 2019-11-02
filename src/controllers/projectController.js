@@ -14,6 +14,15 @@ exports.create = async(req, res) => {
   res.json(createdProject);
 };
 
+exports.update = async(req, res) => {
+  if (!req.params.id) return res.status(400).json('Error');
+  const project = new Project(req.body);
+  const updatedProject = await project.update(req.params.id);
+
+  if (project.errors.length > 0) return res.status(400).json(project.errors);
+  res.json(updatedProject);
+};
+
 exports.show = async(req, res) => {
   if (!req.params.id) return res.status(400).json('Error');
   const project = new Project();
@@ -21,4 +30,13 @@ exports.show = async(req, res) => {
 
   if (project.errors.length > 0) return res.status(400).json(project.errors);
   res.json(showProject);
+};
+
+exports.delete = async(req, res) => {
+  if (!req.params.id) return res.status(400).json('Error');
+  const project = new Project();
+  const deletedProject = await project.delete(req.params.id);
+
+  if (project.errors.length > 0) return res.status(400).json(project.errors);
+  res.json(deletedProject);
 };
